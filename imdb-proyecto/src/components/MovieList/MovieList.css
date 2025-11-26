@@ -1,93 +1,112 @@
-/* MovieCard.css */
 
-/* Body y fondo general de la página */
 body {
-  background-color: #0D1117; /* fondo principal */
-  color: #C9D1D9;            /* texto por defecto */
+  background-color: #252525 !important; 
+  color: #C9D1D9 !important;            
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
-/* Contenedor de la tabla */
 .container {
-  background-color: #161B22; /* fondo del contenedor */
-  padding: 20px;
+  background-color: #3f4e61;
+  padding: 10px 15px !important;
   border-radius: 10px;
-  margin-top: 20px;
-  width: 80vw;
+  margin: 0 auto;
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  box-shadow: 0 0 40px  rgba(0, 0, 0, 0.658);
+  transition: .3s linear;
+}
+.container-fluid:hover{
+  box-shadow: 0 0 40px  rgba(0, 0, 0, 0.904);
 }
 
-/* Título */
 h1 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-top: 2vh !important;
   color: #C9D1D9;
-}
 
+}
+.table-container{
+  box-shadow: 0 0 40px  rgb(0, 0, 0);
+  background-color: #bebebe;
+  border-radius: 8px;
+  overflow-x: auto;
+  max-width: 100%;
+  width: 70rem;
+  height: auto;
+  -webkit-overflow-scrolling: touch;
+}
 .table {
-  width: 100%;
-  background-color: #161B22; 
-  color: #C9D1D9;            
+  font-size: 1.2em;
   border-radius: 8px;
   border-spacing: 0;
-  }
-  
-
+  width: 100%;
+}
 
 .table th {
-  background-color: #0D1117; 
-  color: #58a6ffe7;            
-  text-align: center;
-  padding: 12px;
+  background-color: #b8b8b8  !important; 
+  text-align: center !important;  
+}
+.table thead {
+  white-space: normal;
 }
 .table thead tr th:first-child {
   border-top-left-radius: 20px;
+  width: 30%;
 }
 .table thead tr th:last-child {
   border-top-right-radius: 20px;
 }
-
 .table td {
   text-align: center;
-  padding: 12px;
+  padding: 2vh  !important;
   border-top: 1px solid #30363D;
   border-right: 1px solid #5a5a5a1a;
 }
-
-
-/* HOVER HOVER HOVER HOVER HOVER HOVER */
-.tableRow:nth-child(odd) {
-  background-color: #444654;
-}
-
-.tableRow:nth-child(even) {
-  background-color: #83838d;
-}
-
-.tableRow:nth-child(odd):hover {
-  background-color: #5bc217; /* un poco más oscuro que #444654 */
-}
-
-.tableRow:nth-child(even):hover {
-  background-color: #0000ec; /* un poco más oscuro que #3B3B4D */
-}
-/* HOVER HOVER HOVER HOVER HOVER HOVER */
 
 
 .table tbody tr:hover {
   background-color: #21262D; /* hover filas */
 }
 
-/* Botones de paginación */
 .btn-secondary {
   background-color: #58A6FF;
   border: none;
-  color: #0D1117;
 }
 
 .btn-secondary:hover {
   background-color: #1B6BFF;
+}
+
+/* INFO DESPLEGABLE DE LAS PELICULAS */
+  .info-hr{
+    display: none;
+  }
+.fila{
+  cursor: pointer;
+}
+.info-td{
+  background-color: #c2c2c2 !important;
+}
+.info-box{
+  text-align: left;
+  margin: 0;
+  padding: 0 20px;
+  display: flex;
+}
+.info-A{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.info-line{
+  width: .5px;
+  margin: 0 25px;
+  background-color: rgba(0, 0, 0, 0.199);
 }
 
 /* Span de paginación */
@@ -95,4 +114,49 @@ span {
   color: #C9D1D9;
   font-weight: bold;
   margin: 0 10px;
+  font-size: 1.2em;
+}
+
+/* --- Responsive --------------------------- */
+@media (max-width: 768px) {
+  .table-container {
+    font-size: 0.85rem;
+  }
+
+  .table thead {
+    white-space: nowrap;
+  }
+
+  .table td, .table th {
+    padding: 10px !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .table-container{
+    width: auto;
+  }
+}
+
+@media (max-width: 550px) {
+  .info-line {
+    display: none;
+  }
+  .info-hr{
+    display: flex;
+  }
+  .info-box{
+    flex-direction: column;
+  }
+  .info-A{
+    width: 100%;
+  }
+  .info-A p{
+    margin: 0;
+  }
+  .info-B{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
 }

@@ -1,0 +1,12 @@
+.footer{
+    font-size: 1.1rem;
+    margin-top: 6rem;
+}
+.icon-footer{
+    display: inline-block;
+    transition:  .3s linear; 
+}
+.icon-footer:hover{
+    transform: scale(1.5) !important;
+    color: rgb(90, 177, 253);
+}
