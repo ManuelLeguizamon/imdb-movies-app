@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import imdb_data from './data/imdb_movies.json';
+import imdb_data from './data/imdb_movies_clean.json';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 //-------------------------------------------------------------------------
