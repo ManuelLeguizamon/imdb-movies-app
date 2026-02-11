@@ -46,12 +46,12 @@ const topGrossDirectors = grossPerDirector.sort((a,b) => b.TotalGross - a.TotalG
 
 //---------------------------
 export function Analisis(){
-    
+
     return (
     <>
         <hr className="my-5 " />
         <div className="analisis-container" >
-            <h2 className='mb-4'>Top 10 Ratings mas <b>altos</b></h2>
+            <h2 className='mb-4'>Top 10 <b>Highest</b> Ratings</h2>
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={topRating}>
                     <XAxis dataKey="Genre" />
@@ -69,8 +69,8 @@ export function Analisis(){
                                 color: "#242424a1",
                             }}
                             >
-                            <p><strong>Nombre:</strong> {movie.Name}</p>
-                            <p><strong>Genero:</strong> {movie.Genre}</p>
+                            <p><strong>Name:</strong> {movie.Name}</p>
+                            <p><strong>Genre:</strong> {movie.Genre}</p>
                             <p><strong>Rating:</strong> {movie.Rating}</p>
                             </div>
                         );
@@ -85,7 +85,7 @@ export function Analisis(){
         </div>
 
         <div className="analisis-container my-5" >
-            <h2 className='mb-4'>Top 10 Ratings mas <b>bajos</b></h2>
+            <h2 className='mb-4'>Top 10 <b>Lowest</b> Ratings</h2>
             <ResponsiveContainer>
                 <BarChart data={worstRating}>
                     <XAxis dataKey="Genre" />
@@ -104,8 +104,8 @@ export function Analisis(){
                             color: "#242424a1",
                         }}
                         >
-                        <p><strong>Nombre:</strong> {movie.Name}</p>
-                        <p><strong>Genero:</strong> {movie.Genre}</p>
+                        <p><strong>Name:</strong> {movie.Name}</p>
+                        <p><strong>Genre:</strong> {movie.Genre}</p>
                         <p><strong>Rating:</strong> {movie.Rating}</p>
                         </div>
                     );
@@ -120,7 +120,7 @@ export function Analisis(){
         </div>
 
         <div className="analisis-container my-5 " >
-            <h2 className='mb-4'>Las 10 películas con <b>mayor</b> recaudación</h2>
+            <h2 className='mb-4'>The 10 <b>Highest-Grossing</b> Films</h2>
             <ResponsiveContainer width="100%">
                 <LineChart data={topGross}>
                     <CartesianGrid strokeDasharray="5 5" />
@@ -151,12 +151,14 @@ export function Analisis(){
         </div>
 
         <div className="analisis-container my-5 " >
-            <h2>Las 10 peliculas con <b>menor</b> recaudacion</h2>
+            <h2>The 10 <b>Lowest-Grossing</b> Films</h2>
             <ResponsiveContainer width="100%">
                 <LineChart data={worstGross}>
                     <CartesianGrid strokeDasharray="5 5" />
                     <XAxis dataKey="Name" />
-                    <YAxis />
+                    <YAxis 
+                        tickFormatter={(value) => `$${(value)}`} 
+                    />
                     <Tooltip
                         contentStyle={{
                             borderRadius: "12px",  
@@ -178,7 +180,7 @@ export function Analisis(){
         </div>
 
         <div className="analisis-container" >
-            <h2>Los 5 directores con <b>mayor</b> recaudacion</h2>
+            <h2>The 5 <b>Highest-Grossing</b> Directors</h2>
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={topGrossDirectors}>
                     <XAxis  dataKey="Director" />
